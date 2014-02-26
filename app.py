@@ -6,8 +6,8 @@ app.secret_key = "shhhhthisisasecret"
 
 @app.route("/")
 def index():
-    if session.get("username"):
-        return "User %s is logged in!"%session['username']
+    if session.get("user_id"):
+        return "User %s is logged in!"%session['user_id']
     else:
         return render_template("index.html")
 
@@ -16,10 +16,12 @@ def process_login():
     username = request.form.get("username")
     password = request.form.get("password")
 
-    username = model.authenticate(username, password)
-    if username != None:
+    user_id = model.authenticate(username, hash(password))
+ #   return user_id
+    if user_id != None:
         flash("User authenticated!")
-        session['username'] = username
+        #session['username'] = username
+        session['user_id'] = user_id
     else:
         flash("Password incorrect, there may be a ferret stampede in progress.")
 
