@@ -14,3 +14,17 @@ form.signin input.form-control {
 form.signin input.btn {
     margin-top: 15px;
 }
+
+.wall_post {
+    border: solid red;
+    background-color: #A9E2F3;
+    margin-top:10px;
+    width: 500px;
+    padding: 10px;
+}
+.post_form1 {
+    border: solid green;
+    width: 700px;
+    margin:10px;
+    padding:20px;
+}
