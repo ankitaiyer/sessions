@@ -40,15 +40,8 @@ def register():
 
 @app.route("/register", methods=["POST"])
 def create_account():
-    # if session.get("user_id"):
-    #     username = model.get_username_by_userid(session.get("user_id"))
-    #     return redirect(url_for("show_user_profile", username=username))
-    # else: 
-        print "CREATING ACCOUNT"
         username = request.form.get("username")
         password = request.form.get("password")
-        print "USERMAME", username
-        print "PASSWORD", password
         model.create_account(username, password)
 
         #return render_template("register.html", username=username)
