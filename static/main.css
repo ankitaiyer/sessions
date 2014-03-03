@@ -22,7 +22,7 @@ form.signin input.btn {
     width: 500px;
     padding: 10px;
 }
-.post_form1 {
+form.post_form1 {
     border: solid green;
     width: 700px;
     margin:10px;

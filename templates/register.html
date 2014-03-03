@@ -1,7 +1,7 @@
 {% extends 'master.html' %}
 
 {% block body %}
-           <form class="signin">
+           <form class="signin" action = "/register?username={{username}}&password={{password}}&password_verify={{password}}" method="POST" >
                 <h2 class="signin-heading">Register a new account</h2>
                 <input type="text" class="form-control" placeholder="Username" name="username">
                 <input type="password" class="form-control" placeholder="Password" name="password">
@@ -9,3 +9,6 @@
                 <input type="submit" class="btn btn-lg btn-primary btn-block" value="Submit">
             </form>
 {% endblock %}
+
+
+<!-- action = "/register?username={{username}}&password={{password}}&password_verify={{password}}" -->

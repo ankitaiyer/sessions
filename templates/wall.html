@@ -1,0 +1,47 @@
+<html>
+    <style>
+        .wall_post{
+            border: solid red;
+            background-color: #A9E2F3;
+            margin-top:10px;
+            width: 700px;
+            padding: 10px;
+        }
+        .post_form1 {
+            border: solid green;
+            width: 700px;
+            margin:10px;
+            padding:10px;
+        }
+    </style>
+    <head>
+        <title> This is header </title>
+    </head>
+    <body>
+    <div class="wall_post">
+            <ul>
+               {% for row in rows %}                  
+                    <p> 
+                        Owner: <b> {{ row[0] }} </b> 
+                    </p>
+
+                    <p> 
+                         Author: <b> {{ row[4] }} </b>    
+                         Posted At {{ row[2] }} 
+                    </p>
+
+                    <li> Comment: {{ row[1] }} </li>
+                    <hr> </hr>                  
+                {% endfor %}
+            </ul>
+        </div>
+            
+
+        <div class="post_form1">   
+            <form action="/user/{{username}}" method="POST">
+                    <p> Comment: <input type="text" name="wall_post"> </p>
+                    <button>Click here to submit</button>
+            </form> >
+        </div>
+    </body>
+</html>
